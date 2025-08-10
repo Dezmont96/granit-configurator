@@ -1,518 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // === ДАНІ ДЛЯ ГАЛЕРЕЇ РІЗЬБЛЕНЬ (Тематичні) ===
-    const carvingImages = [
-        {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
-    description: 'Hokkaido Flower',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-        },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-  },
-];
+import carvingImages from './gallery-data.js';
+
+document.addEventListener('DOMContentLoaded', () => {    
+
+     // Налаштування пагінації
+    const ITEMS_PER_PAGE = 12; // 4 колонки * 3 рядки
+    let currentPage = 1;
 
     // Елементи DOM
     const priceElement = document.getElementById('price');
@@ -525,24 +17,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoUploadInput = document.getElementById('photo-upload');
     const previewImage = document.getElementById('preview-image');
     const carvingsGallery = document.getElementById('carvings-gallery');
-
+    const prevButton = document.getElementById('prev-gallery');
+    const nextButton = document.getElementById('next-gallery');
+    
     // Налаштування та стан
     const MAX_WIDTH_CM = 120;
     let currentActiveSize = document.querySelector('.size-options li.active');
     let currentActiveCarving = null;
+    const totalPages = Math.ceil(carvingImages.length / ITEMS_PER_PAGE);
 
-    // Функція: Динамічна генерація галереї різьблень
-    function renderCarvingsGallery() {
+    // === ФУНКЦІЇ РЕНДЕРИНГУ ===
+    function renderCarvingsPage() {
         if (!carvingsGallery) return;
-        const galleryMarkup = carvingImages.map((image, index) => `
-            <div class="gallery-item" data-carving-id="${index + 1}">
+        
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+        const pageItems = carvingImages.slice(startIndex, endIndex);
+        
+        const galleryMarkup = pageItems.map((image, index) => `
+            <div class="gallery-item" data-carving-id="${startIndex + index + 1}">
                 <img src="${image.preview}" alt="${image.description}">
             </div>
         `).join('');
+        
         carvingsGallery.innerHTML = galleryMarkup;
+        updatePaginationButtons();
+    }
+    
+    function updatePaginationButtons() {
+        if (!prevButton || !nextButton) return;
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === totalPages || totalPages <= 1;
     }
 
-    // Функція: оновлення розміру та ціни плити
     function updateSlabLook(element) {
         if (!element) return;
         const price = element.dataset.price;
@@ -559,26 +66,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === ОБРОБНИКИ ПОДІЙ ===
-    sizeOptionsContainer.addEventListener('click', (event) => {
-        const target = event.target.closest('.size-options li');
-        if (!target || target === currentActiveSize) return;
-        if (currentActiveSize) currentActiveSize.classList.remove('active');
-        target.classList.add('active');
-        currentActiveSize = target;
-        updateSlabLook(target);
-    });
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderCarvingsPage();
+            }
+        });
+    }
 
-    nameInput.addEventListener('input', (e) => { previewName.textContent = e.target.value; });
-    datesInput.addEventListener('input', (e) => { previewDates.textContent = e.target.value; });
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderCarvingsPage();
+            }
+        });
+    }
+    
+    if (sizeOptionsContainer) {
+        sizeOptionsContainer.addEventListener('click', (event) => {
+            const target = event.target.closest('.size-options li');
+            if (!target || target === currentActiveSize) return;
+            if (currentActiveSize) currentActiveSize.classList.remove('active');
+            target.classList.add('active');
+            currentActiveSize = target;
+            updateSlabLook(target);
+        });
+    }
+    
+    if (nameInput) nameInput.addEventListener('input', (e) => { previewName.textContent = e.target.value; });
+    if (datesInput) datesInput.addEventListener('input', (e) => { previewDates.textContent = e.target.value; });
+    
+    if (photoUploadInput) {
+        photoUploadInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                previewImage.src = URL.createObjectURL(file);
+                previewImage.style.display = 'block';
+            }
+        });
+    }
 
-    photoUploadInput.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            previewImage.src = URL.createObjectURL(file);
-            previewImage.style.display = 'block';
-        }
-    });
-
+    if (carvingsGallery) {
     carvingsGallery.addEventListener('click', (event) => {
         const clickedItem = event.target.closest('.gallery-item');
         if (!clickedItem) return;
@@ -586,28 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
         clickedItem.classList.add('active');
         currentActiveCarving = clickedItem;
         const carvingImageSrc = clickedItem.querySelector('img').src;
-        // Встановлюємо різьблення як фонове зображення
-        slabPreview.style.backgroundImage = `url(${carvingImageSrc})`;
+        
+        // === ОСЬ КЛЮЧОВЕ ВИПРАВЛЕННЯ ===
+        // Встановлюємо фон, який займає 100% ширини і центрується
+        slabPreview.style.background = `url(${carvingImageSrc}) center / 100% auto no-repeat, #808080`;
     });
+    }
+    
+    const orderBtn = document.getElementById('order-btn');
+    if (orderBtn) {
+        orderBtn.addEventListener('click', () => {
+            const orderData = {
+                size: currentActiveSize ? currentActiveSize.textContent : 'Не вибрано',
+                price: priceElement ? priceElement.textContent : 'N/A',
+                name: nameInput ? nameInput.value : '',
+                dates: datesInput ? datesInput.value : '',
+                photoFile: photoUploadInput.files.length > 0 ? photoUploadInput.files[0] : null,
+                carving: currentActiveCarving ? {
+                    id: currentActiveCarving.dataset.carvingId,
+                    description: currentActiveCarving.querySelector('img').alt
+                } : 'Не вибрано'
+            };
+            console.log('Дані замовлення:', orderData);
+            alert('Дякуємо за замовлення!');
+        });
+    }
 
-    document.getElementById('order-btn').addEventListener('click', () => {
-        const orderData = {
-            size: currentActiveSize.textContent,
-            price: priceElement.textContent,
-            name: nameInput.value,
-            dates: datesInput.value,
-            photoFile: photoUploadInput.files[0],
-            carving: currentActiveCarving ? {
-                id: currentActiveCarving.dataset.carvingId,
-                description: currentActiveCarving.querySelector('img').alt
-            } : 'Не вибрано'
-        };
-        console.log('Дані замовлення:', orderData);
-        alert('Дякуємо за замовлення!');
-    });
-
-    // === ІНІЦІАЛІЗАЦІЯ ===
-    renderCarvingsGallery();
+    // === ІНІЦІАЛІЗАЦІЯ СТОРІНКИ ===
+    renderCarvingsPage();
     if (currentActiveSize) {
         updateSlabLook(currentActiveSize);
     }

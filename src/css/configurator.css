@@ -187,7 +187,7 @@ body {
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
   margin-bottom: 15px;
 }
@@ -228,6 +228,10 @@ body {
   color: #000;
   border-radius: 4px;
   font-weight: bold;
+}
+.arrow-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* --- Фінальна кнопка "Замовити" --- */
