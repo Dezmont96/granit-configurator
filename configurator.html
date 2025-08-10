@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granit - Конфігуратор пам'ятника</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/granit-configurator/configurator.js"></script>
+    <link rel="modulepreload" crossorigin href="/granit-configurator/assets/active-nav-DZZa8ZE-.js">
+    <link rel="stylesheet" crossorigin href="/granit-configurator/assets/active-nav-D30oJYc3.css">
+    <link rel="stylesheet" crossorigin href="/granit-configurator/assets/configurator-EGL2N5Yv.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html" class="logo">GRANIT</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="configurator.html">Конфігуратор</a></li>
+          <li><a href="gallery.html">Приклади робіт</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <button class="cta-button">Зворотний зв'язок</button>
+    </div>
+  </div>
+</header>
+
+
+    <main class="main-configurator">
+      <div class="configurator-wrapper">
+        <div class="configurator-header">
+          <h1>Конфігуратор</h1>
+          <div class="price-display">Ціна: <span id="price">1000.00</span></div>
+        </div>
+
+        <div class="configurator-body">
+          <aside class="sidebar">
+            <h3>Розмір плити</h3>
+            <div id="size-options" class="size-options">
+              <h4>Пам'ятник</h4>
+              <ul>
+                <li data-price="1000" data-size="60x40" class="active">
+                  60x40x5
+                </li>
+                <li data-price="1200" data-size="80x40">80x40x5</li>
+                <li data-price="1300" data-size="80x40">80x40x8</li>
+                <li data-price="1500" data-size="100x50">100x50x5</li>
+                <li data-price="1650" data-size="100x50">100x50x8</li>
+                <li data-price="1800" data-size="120x60">120x60x8</li>
+              </ul>
+              <h4>Подвійні</h4>
+              <ul>
+                <li data-price="1900" data-size="100x50">100x50x5</li>
+                <li data-price="2100" data-size="100x60">100x60x5</li>
+                <li data-price="2400" data-size="120x60">120x60x5</li>
+                <li data-price="2600" data-size="100x60">100x60x8</li>
+                <li data-price="2900" data-size="120x60">120x60x8</li>
+              </ul>
+            </div>
+
+            <div class="personal-data-section">
+              <h3>Персональні дані та фото</h3>
+              <div class="form-group">
+                <label for="full-name">Прізвище, ім'я, по батькові</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  class="form-input"
+                  placeholder="Шевченко Тарас Григорович"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dates">Дати життя</label>
+                <input
+                  type="text"
+                  id="dates"
+                  class="form-input"
+                  placeholder="09.03.1814 - 10.03.1861"
+                />
+              </div>
+              <div class="form-group">
+                <label for="photo-upload" class="photo-upload-label"
+                  >Завантажити фото</label
+                >
+                <input
+                  type="file"
+                  id="photo-upload"
+                  class="photo-upload-input"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+          </aside>
+
+          <section class="main-view">
+            <div id="slab-preview" class="slab-preview">
+              <img id="preview-image" src="" alt="Фото на пам'ятнику" />
+              <div class="slab-text-overlay">
+                <p id="preview-name"></p>
+                <p id="preview-dates"></p>
+              </div>
+            </div>
+            <div class="gallery-nav main-view-nav">
+              <button class="arrow-btn" id="prev-main">&larr;</button>
+              <button class="arrow-btn" id="next-main">&rarr;</button>
+            </div>
+
+            <div class="carvings-gallery-container">
+              <h3>Виберіть різьблення</h3>
+              <div id="carvings-gallery" class="gallery-grid"></div>
+              <div class="gallery-nav">
+                <button class="arrow-btn" id="prev-gallery">&larr;</button>
+                <button class="arrow-btn" id="next-gallery">&rarr;</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="order-section">
+          <button class="cta-button order-button" id="order-btn">
+            Замовити
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Контактна інформація</h4>
+        <p>вул. Прикладна, 1, м. Київ</p>
+        <p>Телефон: +38 (099) 123-45-67</p>
+        <p>Email: info@granit-company.com</p>
+      </div>
+      <div class="footer-cta">
+        <button class="cta-button">Замовити дзвінок</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
