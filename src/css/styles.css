@@ -1,0 +1,144 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #2e2f42;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-top: 24px;
+}
+
+.form input {
+  font-family: inherit;
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #808080;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form input:hover {
+  border-color: #000;
+}
+
+.form input:focus,
+.form input:active {
+  border-color: #4e75ff;
+  outline: none;
+  color: #2e2f42;
+}
+
+.form button {
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form button:hover {
+  background-color: #6c8cff;
+}
+
+/* Gallery Styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style-type: none;
+  padding: 0 156px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  background-color: #fff;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 20px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item b {
+  display: block;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+/* Loader Styles */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: none;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.is-visible {
+  display: inline-block;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
