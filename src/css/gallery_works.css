@@ -1,0 +1,62 @@
+/* === СТИЛІ СТОРІНКИ ГАЛЕРЕЇ === */
+
+.gallery-page-section {
+  padding: 50px 0; /* Відступи зверху і знизу секції */
+}
+
+.gallery-page-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff; /* Білий колір для заголовка */
+}
+
+/* 
+  Ми використовуємо Grid, як і раніше, бо він краще підходить
+  для створення адаптивних сіток з авто-заповненням.
+*/
+.works-gallery-grid {
+  display: grid;
+  /* Створюємо колонки шириною мінімум 320px, які заповнюють весь простір */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px; /* Відстань між елементами */
+}
+
+/* 
+  Адаптуємо .gallery-item під ваш .gallery-work-item 
+  Це посилання <a>, яке є обгорткою.
+*/
+.gallery-work-item {
+  display: block; /* Робимо посилання блоковим елементом */
+  border-radius: 8px; /* Більш заокруглені кути для солідності */
+  overflow: hidden; /* Ховаємо все, що виходить за межі кутів */
+  height: 280px; /* Висота картки галереї */
+
+  /* Тінь для світлої теми не буде видно. Замінимо її на тонку рамку. */
+  border: 1px solid #444;
+
+  /* Плавний перехід для ефектів при наведенні */
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+/* 
+  Ефект при наведенні, адаптований під темну тему
+*/
+.gallery-work-item:hover {
+  transform: scale(1.04); /* Трохи збільшуємо картку */
+
+  /* Додаємо світіння вашим фірмовим жовтим кольором */
+  box-shadow: 0 0 15px rgba(240, 192, 0, 0.3);
+  border-color: rgba(240, 192, 0, 0.5); /* Рамка також стає жовтою */
+}
+
+/* 
+  Стилізуємо саме зображення всередині посилання 
+*/
+.gallery-work-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Запобігає деформації зображення */
+}

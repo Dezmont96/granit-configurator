@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const currentLocation = window.location.pathname;
   const navLinks = document.querySelectorAll('.main-nav a');
 

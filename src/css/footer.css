@@ -1,0 +1,60 @@
+.footer {
+  background-color: var(--footer-background-color);
+  border-top: 1px solid var(--border-color);
+  padding: 40px 0;
+  color: var(--primary-text-color);
+  margin-top: auto; /* Притискає футер до низу сторінки, якщо контенту мало */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Дозволяє переносити блоки на малих екранах */
+  gap: 30px; /* Відстань між блоками */
+}
+
+/* --- Contact Info Styling --- */
+.contact-info {
+  line-height: 1.7; /* Покращує читабельність тексту */
+}
+
+.contact-info h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: var(--secondary-text-color);
+}
+
+/* --- Footer CTA Styling --- */
+/* Стилі для кнопки .cta-button вже повинні бути визначені у header.css.
+   Якщо ні, або якщо ви хочете їх змінити, можете додати їх сюди.
+   Наприклад, можна трохи змінити розмір для футера.
+*/
+.footer-cta .cta-button {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+}
+
+/* --- Адаптивність для мобільних пристроїв --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Розташовуємо блоки один під одним */
+    align-items: flex-start; /* Вирівнюємо по лівому краю */
+    text-align: left;
+  }
+
+  .footer-cta {
+    width: 100%; /* Розтягуємо контейнер кнопки на всю ширину */
+  }
+
+  .footer-cta .cta-button {
+    width: 100%; /* Робимо кнопку на всю ширину */
+    text-align: center;
+  }
+}

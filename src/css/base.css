@@ -1,0 +1,38 @@
+:root {
+  --background-color: #1a1a1a;
+  --footer-background-color: #1f1f1f;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #a0a0a0;
+  --border-color: #444;
+  --accent-color: #f0c000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Додайте це до вашого основного файлу стилів */
+
+html {
+  height: 100%; /* Обов'язково для роботи min-height: 100% на body */
+}
+
+body {
+  display: flex; /* 1. Робимо <body> гнучким контейнером */
+  flex-direction: column; /* 2. Розташовуємо елементи (header, main, footer) в колонку */
+  min-height: 100%; /* 3. Задаємо мінімальну висоту, що дорівнює висоті екрану */
+}
+/* Додайте цей стиль після стилів для body */
+
+main {
+  flex-grow: 1;
+}
+
+/* ДОДАЙТЕ ЦЕЙ НОВИЙ КЛАС */
+.main-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
