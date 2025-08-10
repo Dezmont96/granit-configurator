@@ -1,11 +1,11 @@
 {
-  "name": "goit-js-hw-11",
+  "name": "granit-configurator",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/goit-js-hw-11/",
+    "build": "vite build --base=/granit-configurator/",
     "preview": "vite preview"
   },
   "devDependencies": {

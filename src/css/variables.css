@@ -1,0 +1,13 @@
+:root {
+  --font-main: 'Montserrat', sans-serif;
+
+  --color-dark-bg: #000;
+  --color-dark-secondary: #1a1a1a;
+  --color-dark-lighten: #333;
+
+  --color-text-primary: #fff;
+  --color-text-secondary: #ccc;
+
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-hover: #f0e68c;
+}

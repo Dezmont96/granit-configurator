@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granit - Конфігуратор пам'ятника</title>
+    <!-- Підключаємо загальні стилі та стилі для конфігуратора -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/configurator.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <load src="./partials/header.html" />
+
+    <main class="main-configurator">
+      <div class="configurator-wrapper">
+        <div class="configurator-header">
+          <h1>Конфігуратор</h1>
+          <div class="price-display">Ціна: <span id="price">1000.00</span></div>
+        </div>
+
+        <div class="configurator-body">
+          <aside class="sidebar">
+            <h3>Розмір плити</h3>
+            <div id="size-options" class="size-options">
+              <h4>Пам'ятник</h4>
+              <ul>
+                <li data-price="1000" class="active">60x40x5</li>
+                <li data-price="1200">80x40x5</li>
+                <li data-price="1300">80x40x8</li>
+                <li data-price="1500">100x50x5</li>
+                <li data-price="1650">100x50x8</li>
+                <li data-price="1800">120x60x8</li>
+              </ul>
+              <h4>Подвійні</h4>
+              <ul>
+                <li data-price="1900">100x50x5</li>
+                <li data-price="2100">100x60x5</li>
+                <li data-price="2400">120x60x5</li>
+                <li data-price="2600">100x60x8</li>
+                <li data-price="2900">120x60x8</li>
+              </ul>
+            </div>
+          </aside>
+
+          <section class="main-view">
+            <div id="slab-preview" class="slab-preview">
+              <!-- Тут буде візуалізація плити (зображення або 3D) -->
+            </div>
+            <div class="gallery-nav main-view-nav">
+              <button class="arrow-btn" id="prev-main">&larr;</button>
+              <button class="arrow-btn" id="next-main">&rarr;</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="carvings-gallery-container">
+          <div id="carvings-gallery" class="gallery-grid">
+            <!-- Заглушки для різьблень. Їх можна буде завантажувати динамічно -->
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+1"
+                alt="Різьблення 1"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+2"
+                alt="Різьблення 2"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+3"
+                alt="Різьблення 3"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+4"
+                alt="Різьблення 4"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+5"
+                alt="Різьблення 5"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+6"
+                alt="Різьблення 6"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+7"
+                alt="Різьблення 7"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://via.placeholder.com/120/808080/?text=Фото+8"
+                alt="Різьблення 8"
+              />
+            </div>
+          </div>
+          <div class="gallery-nav">
+            <button class="arrow-btn" id="prev-gallery">&larr;</button>
+            <button class="arrow-btn" id="next-gallery">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <load src="./partials/footer.html" />
+
+    <!-- Підключення скрипта -->
+    <script type="module" src="./js/configurator-logic.js"></script>
+    <script type="module" src="/js/active-nav.js"></script>
+  </body>
+</html>

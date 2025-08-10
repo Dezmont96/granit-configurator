@@ -1,0 +1,113 @@
+/* === HEADER STYLES === */
+.header {
+  background-color: #1f1f1f; /* Трохи світліший за чорний для глибини */
+  border-bottom: 1px solid #444;
+  padding: 15px 0;
+  position: sticky; /* Робить хедер "липким" при прокрутці */
+  top: 0;
+  z-index: 1000; /* Переконуємось, що хедер завжди зверху */
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* --- Navigation Styling --- */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px; /* Відстань між пунктами меню */
+}
+
+.main-nav a {
+  color: #e0e0e0; /* Світло-сірий для звичайного стану */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 5px; /* Простір для нижньої лінії */
+  transition: color 0.3s ease;
+}
+
+/* Ефект при наведенні */
+.main-nav a:hover {
+  color: #ffffff; /* Стає білим при наведенні */
+}
+
+/* Підкреслення для активного посилання */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(
+    --accent-color,
+    #f0c000
+  ); /* Використовуємо акцентний колір */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/* Ефект підкреслення при наведенні */
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  /* Стиль для активного посилання */
+  transform: scaleX(1);
+}
+
+/* Колір для активного посилання */
+.main-nav a.active {
+  color: #ffffff;
+}
+
+/* --- Call-to-Action Button Styling --- */
+.cta-button {
+  padding: 12px 24px;
+  background-color: var(--accent-color, #f0c000); /* Жовтий акцент */
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background-color: #ffd633; /* Трохи світліший при наведенні */
+}
+
+/* --- Адаптивність для мобільних пристроїв --- */
+/* Тут ви можете додати стилі для бургер-меню на малих екранах */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Ховаємо навігацію на мобільних */
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Потрібно буде додати кнопку "бургер" та логіку для відкриття меню */
+}
